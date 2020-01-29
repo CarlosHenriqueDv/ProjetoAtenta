@@ -1,28 +1,20 @@
 package br.atenta.bean;
 
-public class Dependente extends Pessoa{
+public class Dependente extends Pessoa {
 
-	private int matriculaDependente;
-	private String parentesco;
+	private int matriculaDoTrabalhador;
+
 	
 	
 	
-	public String getParentesco() {
-		return parentesco;
+
+
+	public int getMatriculaDoTrabalhador() {
+		return matriculaDoTrabalhador;
 	}
 
-	public void setParentesco(String parentesco) {
-		this.parentesco = parentesco;
+	public void setMatriculaDoTrabalhador(int matriculaDoTrabalhador) {
+		this.matriculaDoTrabalhador = matriculaDoTrabalhador;
 	}
-
-	public int getMatriculaDependente() {
-		return matriculaDependente;
-	}
-
-	public void setMatriculaDependente(int matriculaDependente) {
-		this.matriculaDependente = matriculaDependente;
-	}
-	
-	
 	
 }

@@ -9,13 +9,13 @@ public class ConnectionFactory {
 
 	private static Connection connection;
 
-	private static String url = "";
+	private static String url = "jdbc:mysql://localhost:3306/cadastro";
 
-	private static String user = "";
+	private static String user = "root";
 
-	private static String pass = "";
+	private static String pass = "mysql";
 	
-	private static String forName = "";
+	private static String forName = "com.mysql.cj.jdbc.Driver";
 
 	public static Connection getConnection() {
 
