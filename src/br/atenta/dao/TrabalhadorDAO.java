@@ -11,6 +11,7 @@ import br.atenta.connection.ConnectionFactory;
 
 
 
+
 public class TrabalhadorDAO {
 
 	private Connection connection;
@@ -48,4 +49,43 @@ public class TrabalhadorDAO {
 
 		
 	}
+	
+	
+	public Trabalhador consultarPorId(Trabalhador trabalhador) throws SQLException {
+
+		try {
+
+			Trabalhador newTrabalhador = null;
+
+			connection = ConnectionFactory.getConnection();
+
+			sql = "select * from pessoa where idpessoa = ?";
+
+			preparedStatement = connection.prepareStatement(sql);
+
+			preparedStatement.setInt(1, trabalhador.getMatriculaTrabalhador());
+
+			resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+
+				newTrabalhador.setMatriculaTrabalhador(resultSet.getInt("idpessoa"));
+				newTrabalhador.setCpf(resultSet.getString("cpf"));
+				newTrabalhador.setNome(resultSet.getString("nome"));
+				newTrabalhador.setRemuneracao(resultSet.getDouble("nome"));
+
+			}
+
+			return newTrabalhador;
+
+		} finally {
+
+			preparedStatement.close();
+			resultSet.close();
+			connection.close();
+
+		}
+
+	}
+	
 }

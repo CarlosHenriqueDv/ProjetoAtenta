@@ -8,19 +8,20 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 
 import br.atenta.bean.Trabalhador;
 import br.atenta.connection.ConnectionFactory;
+import br.atenta.dao.TrabalhadorDAO;
 
 
 public class TestaConexao {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, SQLException {
 		
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-		Date data = (Date) sdf.parse("1990-01-02");
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+		Date data = (Date) formato.parse("23/11/2015");
 		
 		Trabalhador traba = new Trabalhador();
 		traba.setCpf("123.852.000.21");
@@ -28,6 +29,9 @@ public class TestaConexao {
 		traba.setNome("teste inserindo no banco");;
 		traba.setSexo("F");
 		traba.setDataNascimento((data));
+		
+		TrabalhadorDAO trabalhador = new TrabalhadorDAO();
+		trabalhador.inserir(traba);
 		
 		
 	}
