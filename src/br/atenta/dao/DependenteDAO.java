@@ -33,7 +33,7 @@ public class DependenteDAO extends Pessoa{
 			
 			preparedStatement.setString(2, dependente.getNome());
 			preparedStatement.setString(3, dependente.getCpf());
-			preparedStatement.setTimestamp(4, dependente.getDataNascimento());
+			preparedStatement.setDate(4, dependente.getDataNascimento());
 			preparedStatement.setInt(5, dependente.getMatriculaDoTrabalhador());
 
 			preparedStatement.execute();

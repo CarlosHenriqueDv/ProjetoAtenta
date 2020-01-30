@@ -34,7 +34,7 @@ public class TrabalhadorDAO {
 			
 			preparedStatement.setString(2, trabalhador.getNome());
 			preparedStatement.setString(3, trabalhador.getCpf());
-			preparedStatement.setTimestamp(4, trabalhador.getDataNascimento());
+			preparedStatement.setDate(4, trabalhador.getDataNascimento());
 
 			preparedStatement.execute();
 

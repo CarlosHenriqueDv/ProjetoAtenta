@@ -1,12 +1,13 @@
 package br.atenta.bean;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 
 public class Pessoa {
 
 	private String cpf, nome, sexo;
-	private Timestamp dataNascimento;
+	private Date dataNascimento;
 	
 	public String getCpf() {
 		return cpf;
@@ -22,12 +23,12 @@ public class Pessoa {
 	}
 	
 	
-	public void setDataNascimento(Timestamp dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	
-	public Timestamp getDataNascimento() {
+
+	public Date getDataNascimento() {
 		return dataNascimento;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 	public String getSexo() {
 		return sexo;

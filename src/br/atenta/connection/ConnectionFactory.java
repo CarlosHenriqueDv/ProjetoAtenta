@@ -8,8 +8,10 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
 	private static Connection connection;
-
-	private static String url = "jdbc:mysql://localhost:3306/cadastro";
+	
+	
+	private static String url = "jdbc:mysql://localhost:3306/cadastro?useTimezone=true&serverTimezone=UTC";
+	
 
 	private static String user = "root";
 
